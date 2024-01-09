@@ -2,7 +2,6 @@ class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         //need to create a Boolean[] responseArr;
         List<Boolean> response = new ArrayList<>();
-        int greater = 0;
         Boolean isGreatest ;
         for(int i=0; i<candies.length; i++){
             candies[i] += extraCandies;
