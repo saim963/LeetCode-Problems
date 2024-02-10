@@ -4,4 +4,5 @@ class Solution {
         else if(n==1)   return 1;
         return fib(n-1)+fib(n-2);
     }
+    //Recursion will always be worse or equal to an iterative approach both time- and memory-wise
 }
