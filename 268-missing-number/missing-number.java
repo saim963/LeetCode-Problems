@@ -1,5 +1,6 @@
 class Solution {
     public int missingNumber(int[] nums) {
+        /*
         //cyclic sort as 0-n 
         int i=0;
         while(i<nums.length){
@@ -13,10 +14,22 @@ class Solution {
         }
         //case 2
         return nums.length;
+        */
+
+        //second basic appproach
+        int n = nums.length;
+        int sumN=n*(n+1)/2;
+        int sumI = 0;
+        for(int num: nums)      
+            sumI += num;
+        return sumN-sumI;
     }
+    /*
     private void swap(int[] arr, int first, int second){
         int temp = arr[first];
         arr[first] = arr[second];
         arr[second] = temp;
     }
+    */
+    
 }
