@@ -1,27 +1,15 @@
 class Solution {
-    public boolean isPalindrome(String str) {
-        // Remove all non-alphanumeric characters
-        StringBuilder sb = new StringBuilder();
-        for (char c : str.toCharArray()) {
-            if (Character.isLetterOrDigit(c)) {
-                sb.append(c);
+    public boolean isPalindrome(String s) {
+        StringBuilder builder = new StringBuilder();
+        String x =s.toLowerCase();//every element is in lowercase
+        System.out.println(x);
+        //non-alphabetical characters
+        for(int i=0; i<x.length(); i++){
+            if(x.charAt(i)>=(char)48 && x.charAt(i)<=(char)57 || x.charAt(i)>=(char)97 && x.charAt(i)<=(char)122){
+                builder.append(x.charAt(i));
             }
         }
-        str = sb.toString();
-        str.strip();
-
-        if (str == null || str.length() == 0) {
-            return true;
-        }
-        str = str.toLowerCase();
-        for (int i = 0; i <= str.length() / 2; i++) {
-            char start = str.charAt(i);
-            char end = str.charAt(str.length() - 1 - i);
-
-            if (start != end) {
-                return false;
-            }
-        }
-        return true;
+        System.out.println(builder);
+        return builder.toString().contentEquals(builder.reverse());
     }
 }
