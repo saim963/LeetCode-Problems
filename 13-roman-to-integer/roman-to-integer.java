@@ -2,6 +2,7 @@ class Solution {
     public int romanToInt(String s) {
         //We'll move from L to R if element is lesser we reduce else all added
         //e.g. MCMXCIV -> 5-1+100-10+1000-100+1000 -> 1994
+        /*
         HashMap<Character,Integer> map = new HashMap<>();
         map.put('I',1);
         map.put('V',5);
@@ -19,5 +20,24 @@ class Solution {
                 result += map.get(s.charAt(i));
         }
         return result;
+        */
+
+        //upper approach is of mapping and this lower approach uses only string and performs better
+        int value=0, prev=0, cur=0;
+        for(int i=s.length()-1; i>=0; i--){
+            cur = switch(s.charAt(i)){
+                case 'M' -> 1000;
+                case 'D' -> 500;
+                case 'C' -> 100;
+                case 'L' -> 50;
+                case 'X' -> 10;
+                case 'V' -> 5;
+                default -> 1;
+            };
+            if(cur<prev)    value-=cur;
+            else    value+=cur;
+            prev=cur;
+        }
+        return value;
     }
 }
