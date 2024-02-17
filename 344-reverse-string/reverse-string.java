@@ -7,7 +7,7 @@ class Solution {
          * for(int i=l-1; i>=0; i--){
          * r[j]=s[i];
          * j++;
-         * }//Problem with this code is SC should e O(1);
+         * }//Problem with this code is SC should be O(1);
          */
         // reverse by swapping or using collection.reverse() method or two pointers
         char temp;
