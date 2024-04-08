@@ -5,6 +5,6 @@ class Solution {
             map.put(i,map.getOrDefault(i,0)+1);
             if(map.get(i)>nums.length/2)  return i;
         }
-        return -1;
+        return 0;
     }
 }
