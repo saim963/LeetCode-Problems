@@ -7,6 +7,6 @@ class Solution {
         int m = s+(e-s)/2;
         if(target == nums[m])  return m;
         if(target > nums[m])  return bs(nums, target, m+1,e);
-        return bs(nums, target, 0,m-1);
+        return bs(nums, target, s, m-1);
     }
 }
