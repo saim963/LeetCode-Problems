@@ -3,7 +3,7 @@ class Solution {
         int count =0;
         StringBuilder sb = new StringBuilder();
         for(char ch: s.toCharArray()){
-            int index = sb.indexOf(String.valueOf(ch));
+            int index = sb.indexOf(""+ch);
             if(index != -1){
                 count = Math.max(sb.length(),count);
                 sb.delete(0, index + 1);
