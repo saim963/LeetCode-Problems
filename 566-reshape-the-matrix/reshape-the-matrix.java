@@ -1,5 +1,6 @@
 class Solution {
     public int[][] matrixReshape(int[][] mat, int r, int c) {
+        /*
         ArrayList<Integer> list = new ArrayList<>();
         for(int[] arr: mat){
             for(int el: arr){
@@ -16,5 +17,26 @@ class Solution {
             }
         }
         return matrix;
+        */
+
+        int row = mat.length;
+        int col = mat[0].length;
+
+        if(row*col != r*c)  return mat;
+        
+        int[][] matrix = new int[r][c];
+        int a=0, b=0;
+        for(int i=0; i<row; i++){
+            for(int j=0; j<col; j++){
+                matrix[a][b] = mat[i][j];
+                b++;
+                if(b==c){
+                    b=0;
+                    a++;
+                }
+            }
+        }
+        return matrix;
+
     }
 }
