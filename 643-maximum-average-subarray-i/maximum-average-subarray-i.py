@@ -9,7 +9,7 @@ class Solution:
             #Now when r is moving forward exceeding k, we delete the elements from left side
             #This addition and deletion is to maintain lenght k of sliding window
             curr = curr + nums[r] - nums[r-k]
-            #getting the maimum value from both best and curr
+            #getting the maximum value from both best and curr
             best = max(best,curr)
         #returning the average of bests subarray
         return best/k
