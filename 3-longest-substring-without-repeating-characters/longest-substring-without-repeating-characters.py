@@ -8,7 +8,7 @@ class Solution:
         for r in range(len(s)):
             #In case we get element in the char set
             while s[r] in char_set:
-                #In case we find we will start removing the elements fromt he other side
+                #we will start removing the elements from the other side
                 char_set.remove(s[l])
                 #and start incrementing the left pointer
                 l += 1
@@ -16,5 +16,5 @@ class Solution:
             char_set.add(s[r])
             #Once the removing and adding is done we then compare the max length
             max_len = max(max_len,r-l+1)
-        #In the end we returnt he maximum length of the max set
+        #In the end we return the maximum length of the max set
         return max_len
